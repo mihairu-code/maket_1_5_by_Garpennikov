@@ -51,14 +51,14 @@ function hideMore () {
 
     btn.addEventListener('click', () => {
         if (text.textContent === 'Показать всё') {
-            if (window.innerWidth >= 1120) {
+            if (window.innerWidth >= 984) {
                 makeANewBrandCard()
             }
             text.textContent = 'Скрыть'
             img.classList.replace('show-more__icon', 'show-more__icon--reverse')
             brandsBlock.style.height = '364px'
         } else if (text.textContent === 'Скрыть') {
-            if (window.innerWidth >= 1120) {
+            if (window.innerWidth >= 984) {
                 delCard()
             }
             text.textContent = 'Показать всё'
