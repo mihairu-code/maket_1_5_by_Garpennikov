@@ -55,7 +55,13 @@ body {
         width: 100%;
     }
 
+    .swiper-wrapper{
+        list-style: none;
+    }
+
     .brands-desk__list {
+        margin:0;
+        list-style: none;
         column-gap: 16px;
         height: 72px;
         padding-left: 16px;
@@ -64,16 +70,21 @@ body {
 
     .swiper-slide {
         width: 240px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
 
-        padding: 16px;
+        padding: 0 16px 0 16px;
         background-color: #FFFFFF;
 
         border: 1px solid #EAEAEA;
         border-radius: 7px;
     }
+
+    .brand {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 72px;
+    }
+
 
     .brands__lenovo-logo {
         width: 108px;
@@ -149,17 +160,17 @@ body {
         width: 7px;
         height: 2px;
 
-        transform: translate(3px, -5px) rotate(90deg);
+        transform: translate(3px, -4px) rotate(45deg);
         transition: transform .2s;
     }
 
     .arrow-button:hover.arrow-button::before,
     .arrow-button:focus.arrow-button::before {
-        transform: translate(3px, -4px) rotate(45deg);
+        transform: translate(7px, -4px) rotate(45deg) scale(1.2);
     }
 
     .arrow-button:active.arrow-button::before {
-        transform: translate(7px, -4px) rotate(45deg) scale(1.2);
+        transform: translate(17px, -4px) rotate(45deg) scale(1.2);
     }
 
     .arrow-button::after {
@@ -169,18 +180,17 @@ body {
         display: inline-block;
         width: 7px;
         height: 2px;
-        transform: translate(-4px, 1px) rotate(90deg);
+        transform: translate(-4px) rotate(135deg);
         transition: transform .2s;
     }
 
     .arrow-button:hover.arrow-button::after,
     .arrow-button:focus.arrow-button::after {
-        transform: translate(-4px) rotate(135deg);
-
+        transform: translate(0) rotate(135deg) scale(1.2);
     }
 
     .arrow-button:active.arrow-button::after {
-        transform: translate(0px) rotate(135deg) scale(1.2);;
+        transform: translate(10px) rotate(135deg) scale(1.2);
     }
 
     .toggle-points {
@@ -266,7 +276,7 @@ body {
         overflow: hidden;
     }
 
-    .brand {
+    .swiper-slide {
         width: 224px;
         height: 72px;
     }
@@ -291,7 +301,7 @@ body {
         padding-left: 32px;
     }
 
-    .brand {
+    .swiper-slide {
         width: 240px;
     }
 

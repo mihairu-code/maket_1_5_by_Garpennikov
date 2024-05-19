@@ -16,25 +16,22 @@ const swiper = new Swiper('.swiper', {
 
 });
 
+let brandsBlock = document.querySelector('.brands-desk')
+let brandsList = document.querySelector('ul.swiper-wrapper.brands-desk__list')
+
 function deletePagination  () {
     swiper.destroy(true, true)
     let pagination = document.querySelector('div.swiper-pagination.toggle-points')
     pagination.remove()
 }
 
-let brandsBlock = document.querySelector('.brands-desk')
-
 function addExpandButton () {
-    let expandButton = document.createElement('button')
-    expandButton.classList.add('show-more__button')
+    let expandButton = makeElement('nutton', 'show-more__button' )
 
-    let expandButton__img = document.createElement('img')
-    expandButton__img.classList.add('show-more__icon')
-    expandButton__img.src = 'icons/expand.svg'
+    let expandButton__img = makeElement('img', 'show-more__icon')
     expandButton.appendChild(expandButton__img)
 
-    let expandButton__text = document.createElement('span')
-    expandButton__text.classList.add('show-more__text')
+    let expandButton__text = makeElement('span', 'show-more__text' )
     expandButton__text.textContent = 'Показать всё'
     expandButton.appendChild(expandButton__text)
 
@@ -66,14 +63,14 @@ function hideMore () {
     })
 }
 
-let brandsList = document.querySelector('div.swiper-wrapper.brands-desk__list')
-
-let makeElement = function (name, classForAdd, secondClassForAdd){
+let makeElement = function (name, classForAdd){
     let element = document.createElement(name)
     element.classList.add(classForAdd)
-    element.classList.add(secondClassForAdd)
     if (name === 'img') {
-        element.src = 'icons/lenovo.svg'
+        element.src = 'icons/lenovo.png'
+        if (classForAdd === 'show-more__icon') {
+            element.src = 'icons/expand.svg'
+        }
     } else if (name === 'a') {
         element.href = ''
     }
@@ -83,18 +80,21 @@ let makeElement = function (name, classForAdd, secondClassForAdd){
 let makeANewBrandCard = function () {
 
     for (let i = 0; i < 3; i++) {
-        let newDiv = makeElement('a', 'brand', 'swiper-slide')
+        let newLi = makeElement('li', 'swiper-slide')
+        let newDiv = makeElement('a', 'brand')
         let newImg = makeElement('img', 'brands__lenovo-logo')
         let newButton = makeElement('button', 'arrow-button')
         newDiv.appendChild(newImg)
         newDiv.appendChild(newButton)
-        brandsList.appendChild(newDiv)
+        newLi.appendChild(newDiv)
+        brandsList.appendChild(newLi)
     }
+
 }
 
 let delCard = function () {
     for (let i = 0; i < 3; i++) {
-        brandsList.removeChild(document.querySelector('.brand:last-child'))
+        brandsList.removeChild(document.querySelector('.swiper-slide:last-child'))
     }
 }
 
