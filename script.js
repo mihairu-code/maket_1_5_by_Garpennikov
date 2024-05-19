@@ -4,13 +4,11 @@ const swiper = new Swiper('.swiper', {
     loop: true,
     width: 240,
     breakpoints: {
-        // when window width is >= 320px
         320: {
             slidesPerView: 1,
         },
 
     },
-    // If we need pagination
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -68,9 +66,6 @@ function hideMore () {
     })
 }
 
-// let copiedBrand = document.querySelector(".brand")
-// const newBrand = copiedBrand.cloneNode(true)
-// console.log(newBrand)
 let brandsList = document.querySelector('div.swiper-wrapper.brands-desk__list')
 
 let makeElement = function (name, classForAdd, secondClassForAdd){
@@ -78,7 +73,7 @@ let makeElement = function (name, classForAdd, secondClassForAdd){
     element.classList.add(classForAdd)
     element.classList.add(secondClassForAdd)
     if (name === 'img') {
-        element.src = 'icons/lenovo.svg'
+        element.src = 'icons/lenovo.png'
     } else if (name === 'a') {
         element.href = ''
     }
