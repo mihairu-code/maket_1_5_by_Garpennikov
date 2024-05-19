@@ -1,5 +1,4 @@
 const swiper = new Swiper('.swiper', {
-    // Optional parameters
     direction: 'horizontal',
     loop: true,
     width: 240,
@@ -10,7 +9,6 @@ const swiper = new Swiper('.swiper', {
         },
 
     },
-    // If we need pagination
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -68,9 +66,6 @@ function hideMore () {
     })
 }
 
-// let copiedBrand = document.querySelector(".brand")
-// const newBrand = copiedBrand.cloneNode(true)
-// console.log(newBrand)
 let brandsList = document.querySelector('div.swiper-wrapper.brands-desk__list')
 
 let makeElement = function (name, classForAdd, secondClassForAdd){
