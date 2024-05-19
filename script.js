@@ -7,7 +7,6 @@ const swiper = new Swiper('.swiper', {
         320: {
             slidesPerView: 1,
         },
-
     },
     pagination: {
         el: '.swiper-pagination',
@@ -23,20 +22,6 @@ function deletePagination  () {
     swiper.destroy(true, true)
     let pagination = document.querySelector('div.swiper-pagination.toggle-points')
     pagination.remove()
-}
-
-function addExpandButton () {
-    let expandButton = makeElement('nutton', 'show-more__button' )
-
-    let expandButton__img = makeElement('img', 'show-more__icon')
-    expandButton.appendChild(expandButton__img)
-
-    let expandButton__text = makeElement('span', 'show-more__text' )
-    expandButton__text.textContent = 'Показать всё'
-    expandButton.appendChild(expandButton__text)
-
-    brandsBlock.appendChild(expandButton)
-    return expandButton
 }
 
 function hideMore () {
@@ -100,11 +85,6 @@ let delCard = function () {
 
 if (window.innerWidth >= 768) {
     deletePagination()
-    addExpandButton()
-    hideMore()
-} else if (window.innerWidth >= 1120) {
-    deletePagination()
-    addExpandButton()
     hideMore()
 }
 

@@ -221,6 +221,7 @@ body {
 
     .show-more__text {
         display: inline;
+        font-family: 'TT Lakes',sans-serif;
         width: 101px;
         font-size: 16px;
         line-height: 24px;
