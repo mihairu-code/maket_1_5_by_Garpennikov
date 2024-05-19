@@ -32,7 +32,6 @@ body {
     }
 
     .brands__header {
-        height: 80px;
         padding: 16px;
         background: linear-gradient(90deg, #F8F8F8 0%, #FFFFFF 98.61%);
     }
